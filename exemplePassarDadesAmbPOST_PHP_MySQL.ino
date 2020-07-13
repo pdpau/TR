@@ -50,14 +50,15 @@ void loop() {
   Serial.println(temperatura);
   Serial.println(humedad);
 
-  String temp = "temp=";
+  String disp = "disp=WeMos1";
+  String temp = "&temp=";
   String hum = "&hum=";
   
   if (WiFi.status() == WL_CONNECTED) {
 
     HTTPClient http;
 
-    String datos_a_enviar = temp + temperatura + hum + humedad;
+    String datos_a_enviar = disp + temp + temperatura + hum + humedad;
 
     //Indicamos el destino
     http.begin("http://192.168.0.11/dataToDB.php"); //Archivo PHP con el que se mandarán los datos a MySQL
