@@ -80,16 +80,14 @@ void detener_medici_C3_B3n_nn_minutos() {
   delay(5000);
 }
 
-void setup()
-{
+void setup() {
   	mqtt_setup();
 pinMode(0, INPUT);
 dht0.begin();
 }
 
 
-void loop()
-{
+void loop() {
 	yield();
 
 	mqtt_loop();
